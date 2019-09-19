@@ -1,0 +1,23 @@
+---
+title: "Class"
+author: "Jakeschonberger"
+date: "9/19/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+
+```{r Enrollment}
+
+enrollment_data <- read_excel("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3)
+
+enrollment_data %>% filter(`Course Department`=="English") %>% arrange(desc(Total)) %>% select('Course Name', 'Course Title')
+
+```
+
+English class with highest enrollment. 
