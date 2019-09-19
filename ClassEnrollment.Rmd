@@ -6,18 +6,19 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readxl)
+library(janitor)
 ```
 
 
-```{r Enrollment}
+```{r}
 
-enrollment_data <- read_excel("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3)
+enrollment_data <- read_excel("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3) %>% clean_names()
 
-enrollment_data %>% filter(`Course Department`=="English") %>% arrange(desc(Total)) %>% select('Course Name', 'Course Title')
+highest <- enrollment_data %>% filter(`course_department`=="English") %>% arrange(desc(total)) %>% select('course_name', 'course_title') %>% head(1)
 
 ```
 
-English class with highest enrollment. 
+English class with highest enrollment is `r highest`

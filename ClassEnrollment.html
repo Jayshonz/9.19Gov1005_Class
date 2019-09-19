@@ -369,24 +369,7 @@ summary {
 </div>
 
 
-<pre class="r"><code>enrollment_data &lt;- read_excel(&quot;raw-data/class_enrollment_summary_by_term_9.19.19.xlsx&quot;, skip = 3)
-
-enrollment_data %&gt;% filter(`Course Department`==&quot;English&quot;) %&gt;% arrange(desc(Total)) %&gt;% select('Course Name', 'Course Title')</code></pre>
-<pre><code>## # A tibble: 81 x 2
-##    `Course Name`                  `Course Title`
-##    &lt;chr&gt;                          &lt;chr&gt;         
-##  1 The Essay: History &amp; Practice  ENGLISH 185E  
-##  2 High and Low in Postwar Americ ENGLISH 170A  
-##  3 Tutorial - Senior Year         ENGLISH 99R   
-##  4 Broadway Bodies                ENGLISH 162BB 
-##  5 Proust, Joyce, Woolf           ENGLISH 165   
-##  6 Science Fiction                ENGLISH 182   
-##  7 After Hamlet                   ENGLISH 121CG 
-##  8 Arrivals: 700-1700             ENGLISH 41    
-##  9 Poets: Lyric Poetry            ENGLISH 55    
-## 10 Poets: Poetry and Everything   ENGLISH 52    
-## # … with 71 more rows</code></pre>
-<p>English class with highest enrollment.</p>
+<p>English class with highest enrollment is The Essay: History &amp; Practice, ENGLISH 185E</p>
 
 
 
